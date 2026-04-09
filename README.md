@@ -48,3 +48,11 @@ O APK gerado fica no caminho:
 
 ## Observação importante
 Este projeto inclui workflow para gerar o APK no GitHub sem depender do `gradle-wrapper.jar`, usando Gradle 9.3.1 no próprio runner.
+
+## Ajuste aplicado para build no GitHub
+Como o projeto usa `org.jetbrains.kotlin.android` com AGP 9.1, foram adicionadas as flags temporárias abaixo em `gradle.properties` para desativar o built-in Kotlin e evitar a falha de build no CI:
+
+- `android.builtInKotlin=false`
+- `android.newDsl=false`
+
+Isso mantém o projeto compilando com o plugin Kotlin atual.
