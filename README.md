@@ -56,3 +56,12 @@ Como o projeto usa `org.jetbrains.kotlin.android` com AGP 9.1, foram adicionadas
 - `android.newDsl=false`
 
 Isso mantém o projeto compilando com o plugin Kotlin atual.
+
+
+## Observação de compatibilidade AGP 9
+
+Este projeto usa o **built-in Kotlin** do AGP 9.x. Por isso:
+- o plugin `org.jetbrains.kotlin.android` foi removido
+- o antigo bloco `android { kotlinOptions { ... } }` não é usado
+
+Se surgir erro relacionado a Kotlin no build, confira se o repositório está usando os arquivos mais recentes deste ZIP.
